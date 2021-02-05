@@ -14,7 +14,7 @@ class TwootsController < ApplicationController
 
   # GET /twoots/new
   def new
-    @twoot = Twoot.new
+    @twoot = current_user.twoots.build
   end
 
   # GET /twoots/1/edit
@@ -23,7 +23,7 @@ class TwootsController < ApplicationController
 
   # POST /twoots or /twoots.json
   def create
-    @twoot = Twoot.new(twoot_params)
+    @twoot = current_user.twoots.build(twoot_params)
 
     respond_to do |format|
       if @twoot.save
