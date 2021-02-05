@@ -1,5 +1,6 @@
 class TwootsController < ApplicationController
   before_action :set_twoot, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /twoots or /twoots.json
   def index
