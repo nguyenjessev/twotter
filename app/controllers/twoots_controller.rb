@@ -19,6 +19,7 @@ class TwootsController < ApplicationController
 
   # GET /twoots/1/edit
   def edit
+    @twoots = Twoot.all.order("created_at DESC")
   end
 
   # POST /twoots or /twoots.json
