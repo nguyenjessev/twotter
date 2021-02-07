@@ -26,7 +26,7 @@
             <small>@<%= twoot.user.username %></small><br />
             <p><%= twoot.twoot %></p>
           </div>
-          <% if user_signed_in? %>
+          <% if user_signed_in? && twoot.user_id == current_user.id %>
             <nav class="level">
               <div class="level-left is-mobile">
                 <%= link_to twoot, class: "level-item" do %>
